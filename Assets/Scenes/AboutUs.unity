@@ -276,8 +276,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2008496488}
-        m_TargetAssemblyTypeName: GoToMenu, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_TargetAssemblyTypeName: GoToSceneName, Assembly-CSharp
+        m_MethodName: GoToSceneX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

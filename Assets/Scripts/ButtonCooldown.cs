@@ -8,6 +8,7 @@ public class ButtonCooldown : MonoBehaviour
     public Button myButton;
     public TMP_Text buttonText;
     public float cooldownTime = 5f;
+    public string textButton = string.Empty;
 
     private float timeLeft;
 
@@ -36,7 +37,7 @@ public class ButtonCooldown : MonoBehaviour
             timeLeft -= 1f;
         }
 
-        buttonText.text = "Triangle";
+        buttonText.text = textButton;
         myButton.interactable = true;
     }
 }

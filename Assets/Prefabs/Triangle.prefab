@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 342470557056587156}
   - component: {fileID: 5879993784345038138}
-  - component: {fileID: -366670121576832211}
   - component: {fileID: -7405983333955736155}
   - component: {fileID: 2331817421935789468}
-  - component: {fileID: -5926597688023546490}
   - component: {fileID: 2941258127068443761}
+  - component: {fileID: -6102816159357012762}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -89,21 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-366670121576832211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3925886961983496593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea01d995fd283e48b130c290d4d7909, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 3925886961983496593}
-  audioSource: {fileID: 2941258127068443761}
-  Vector2: {x: -6.35, y: -2.5}
 --- !u!50 &-7405983333955736155
 Rigidbody2D:
   serializedVersion: 4
@@ -179,19 +163,6 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
---- !u!114 &-5926597688023546490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3925886961983496593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97536c40226f4a54c841c7f921fe5755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!82 &2941258127068443761
 AudioSource:
   m_ObjectHideFlags: 0
@@ -288,3 +259,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6102816159357012762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925886961983496593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11a8009532d80e43918dbd52ec2f16e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 20
+  spawnCost: 3
+  movementSpeed: 2
+  moveRight: 1

@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI; // Для работы с UI элементами
 
 public class CoinManager : MonoBehaviour
 {
@@ -57,4 +56,5 @@ public class CoinManager : MonoBehaviour
         }
         return false;
     }
+
 }

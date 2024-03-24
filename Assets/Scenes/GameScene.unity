@@ -841,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4110746622876748886, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
       propertyPath: m_text
-      value: mellstroytype2
+      value: Dinozaur
       objectReference: {fileID: 0}
     - target: {fileID: 6280226723454436861, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
       propertyPath: prefabToSpawn
@@ -929,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8959077434933323510, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
       propertyPath: textButton
-      value: mellstroytype2
+      value: Dinozaur
       objectReference: {fileID: 0}
     - target: {fileID: 8959077434933323510, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
       propertyPath: cooldownTime
@@ -2125,6 +2125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MellstroyType1BTN
       objectReference: {fileID: 0}
+    - target: {fileID: 4110746622876748886, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
+      propertyPath: m_text
+      value: Am Am Am
+      objectReference: {fileID: 0}
     - target: {fileID: 7573210255206299290, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2204,6 +2208,10 @@ PrefabInstance:
     - target: {fileID: 7573210255206299290, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959077434933323510, guid: e8c5d77b8198c754f88c30a50f07abed, type: 3}
+      propertyPath: textButton
+      value: Am Am Am
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

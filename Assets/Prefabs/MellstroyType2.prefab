@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   damage: 20
-  spawnCost: 30
+  spawnCost: 6
   movementSpeed: 2
   moveRight: 1
 --- !u!61 &3796338583929242930

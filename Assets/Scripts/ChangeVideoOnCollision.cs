@@ -4,8 +4,12 @@ using UnityEngine.Video;
 public class ChangeVideoOnCollision : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public VideoClip newVideoClip;
+    public VideoClip newVideoClip1;
+    public VideoClip newVideoClip2;
     private VideoClip originalVideoClip;
+
+    private bool isCollidingWithEnemy = false;
+    private bool isCollidingWithMellStroy = false;
 
     private void Start()
     {
@@ -26,17 +30,49 @@ public class ChangeVideoOnCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Проверяем столкновение с объектом MellStroy
+        if (collision.gameObject.CompareTag("MellStroy"))
+        {
+            isCollidingWithMellStroy = true;
+            // Если уже есть столкновение с Enemy, меняем видео на newVideoClip1
+            if (isCollidingWithEnemy)
+            {
+                ChangeVideo(newVideoClip1);
+            }
+            else
+            {
+                ChangeVideo(newVideoClip2);
+            }
+        }
+
+        // Проверяем столкновение с объектом Enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            ChangeVideo(newVideoClip);
+            isCollidingWithEnemy = true;
+            // Если уже есть столкновение с MellStroy, меняем видео на newVideoClip1
+            if (isCollidingWithMellStroy)
+            {
+                ChangeVideo(newVideoClip2);
+            }
+            else
+            {
+                ChangeVideo(newVideoClip1);
+            }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        // При завершении столкновения с MellStroy
+        if (collision.gameObject.CompareTag("MellStroy"))
+        {
+            isCollidingWithMellStroy = false;
+        }
+
+        // При завершении столкновения с Enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            ChangeVideo(originalVideoClip);
+            isCollidingWithEnemy = false;
         }
     }
 

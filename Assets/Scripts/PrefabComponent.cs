@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PrefabComponent : MonoBehaviour
@@ -7,6 +10,10 @@ public class PrefabComponent : MonoBehaviour
     public int spawnCost = 50; // Цена спавна
     public float movementSpeed = 5.0f; // Скорость движения
     public bool moveRight = true; // Направление движения (true - вправо, false - влево)
+    public TMP_Text healthText;
+
+    private bool isCollidingWithEnemy = false;
+
 
     private Rigidbody2D rb;
 
@@ -20,6 +27,11 @@ public class PrefabComponent : MonoBehaviour
         Move();
     }
 
+    private void Update()
+    {
+        healthText.text = "Hp: " + health.ToString();
+    }
+
     private void Move()
     {
         // Определяем направление движения в зависимости от moveRight
@@ -28,19 +40,34 @@ public class PrefabComponent : MonoBehaviour
         rb.velocity = new Vector2(moveDirection * movementSpeed, rb.velocity.y);
     }
 
-    // Метод для получения урона
-    public void TakeDamage(int amount)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        health -= amount;
-        if (health <= 0)
+        if (collision.gameObject.CompareTag("Enemy") && !isCollidingWithEnemy)
         {
-            Die();
+            isCollidingWithEnemy = true;
+            StartCoroutine(DamageOverTime(20, 1f)); // начать наносить урон, пока объект в контакте с врагом
         }
     }
 
-    // Метод вызывается, когда здоровье объекта падает до 0
-    private void Die()
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        Destroy(gameObject); // Уничтожаем объект
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            isCollidingWithEnemy = false; // прекратить нанесение урона, когда контакт прекращается
+        }
+    }
+
+    private IEnumerator DamageOverTime(int damage, float delay)
+    {
+        while (isCollidingWithEnemy)
+        {
+            health -= damage; // нанести урон
+            if (health <= 0)
+            {
+                Destroy(gameObject); // уничтожить объект, если здоровье меньше или равно нулю
+                break; // выйти из цикла
+            }
+            yield return new WaitForSeconds(delay); // подождать перед нанесением следующего урона
+        }
     }
 }

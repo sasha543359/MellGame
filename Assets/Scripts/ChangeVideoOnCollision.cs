@@ -6,7 +6,7 @@ public class ChangeVideoOnCollision : MonoBehaviour
     public VideoPlayer videoPlayer;
     public VideoClip newVideoClip1;
     public VideoClip newVideoClip2;
-    private VideoClip originalVideoClip;
+    public VideoClip originalVideoClip;
 
     private bool isCollidingWithEnemy = false;
     private bool isCollidingWithMellStroy = false;
@@ -25,6 +25,14 @@ public class ChangeVideoOnCollision : MonoBehaviour
         else
         {
             Debug.LogError("VideoPlayer component not found on this object or its children.");
+        }
+    }
+
+    void Update()
+    {
+        if (!isCollidingWithMellStroy && !isCollidingWithEnemy)
+        {
+            ChangeVideo(originalVideoClip);
         }
     }
 

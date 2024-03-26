@@ -1737,7 +1737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 609174675}
-  cooldownTime: 3
+  cooldownTime: 1
   textButton: Am am am
   prefabToSpawn: {fileID: 8886833299711925611, guid: b770242a50d93984993207c8a910fbc5, type: 3}
   spawnButton: {fileID: 736038054}
@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 987379963}
-  cooldownTime: 5
+  cooldownTime: 2
   textButton: Dinozaur
   prefabToSpawn: {fileID: 8886833299711925611, guid: 91cf8a658a8e86a44a29308a01e61ade, type: 3}
   spawnButton: {fileID: 255855598}

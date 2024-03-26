@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PrefabComponent : MonoBehaviour
 {
-    public int health = 100; // Здоровье
-    public int damage = 20; // Урон
-    public int spawnCost = 50; // Цена спавна
-    public float movementSpeed = 5.0f; // Скорость движения
-    public bool moveRight = true; // Направление движения (true - вправо, false - влево)
+    public int health = 100;
+    public int damage = 20;
+    public int spawnCost = 50;
+    public float movementSpeed = 5.0f;
+    public bool moveRight = true;
     public TMP_Text healthText;
+
+    public AudioSource healthAudioSource;
 
     private bool isCollidingWithEnemy = false;
 
@@ -62,6 +64,7 @@ public class PrefabComponent : MonoBehaviour
         while (isCollidingWithEnemy)
         {
             health -= damage; // нанести урон
+            healthAudioSource.Play();
             if (health <= 0)
             {
                 Destroy(gameObject); // уничтожить объект, если здоровье меньше или равно нулю

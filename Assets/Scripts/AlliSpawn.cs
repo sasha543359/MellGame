@@ -9,7 +9,7 @@ public class AlliSpawn : MonoBehaviour
     public float cooldownTime = 5f;
     public string textButton = string.Empty;
     public GameObject prefabToSpawn; // Префаб, который будет спавнить кнопка
-    private Button spawnButton; // Кнопка для спавна
+    public Button spawnButton; // Кнопка для спавна
     public Vector3 Vector3;
 
     private float timeLeft;
